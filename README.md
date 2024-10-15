@@ -1,2 +1,2 @@
-# Arquitetura
-Resolução das lista da disciplina de arquitetura
+# Arquitetura de Computadores
+Resolução das lista da disciplina de Arquitetura de Computadores
