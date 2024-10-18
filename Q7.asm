@@ -1,30 +1,62 @@
 .text
 main:
-	addi $2, $0, 5 #código para entrada
+	addi $2, $0, 5
 	syscall
+	add $8, $0, $2
 	
-	addi $8, $0, 10 #move do reg2 para o reg8
-	div $2, $8 #faz a divisão 
+algarismos:
+	addi $9, $0, 10
+	div $8, $9
+	mfhi $10 #Algarismo
 	
-	mflo $9 #move a parte inteira para o reg9
-	add $4, $0, $9 #move para o reg4 para impressão
-	addi $2, $0, 1 #Código para impressaõ de inteiros
-	syscall
+	mflo $11
+	div $11, $9
+	mfhi $12 #Algarismo
 	
-	addi $4, $0, '\n' #insere o cractere no reg4
-	addi $2, $0, 11  #código para impressão de caractere
-	syscall
+	mflo $13
+	div $13, $9
+	mfhi $14 #Algarismo
 	
-	mfhi $10 #move a parte fracionária para reg10
-	div $10, $8 #divide a parte fracionária por 10
-	mflo $11 #move a parte inteira para o reg11
-	add $4, $0, $11 #move para o reg4
-	addi $2, $0, 1 #código para impressão
+	mflo $15
+	div $15, $9
+	mfhi $16 #Algarismo
+	
+imprimir:
+	add $4, $0, $10
+	addi $2, $0, 1
 	syscall
 	
 	addi $4, $0, '\n'
-	addi $2, $0, 11 #código para impressão de caractere
+	addi $2, $0, 11
+	syscall
+	
+	add $4, $0, $12
+	addi $2, $0, 1
+	syscall
+	
+	addi $4, $0, '\n'
+	addi $2, $0, 11
+	syscall
+	
+	add $4, $0, $14
+	addi $2, $0, 1
+	syscall
+	
+	addi $4, $0, '\n'
+	addi $2, $0, 11
+	syscall
+	
+	add $4, $0, $16
+	addi $2, $0, 1
 	syscall
 	
 	
+
+	
+	
+	
+	
+	
+	
+		
 	
