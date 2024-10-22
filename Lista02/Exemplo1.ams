@@ -1,1 +1,30 @@
+.text
+main:	addi $2, $0, 5
+	syscall
+	add $8, $0, $2
+	
+	addi $9,$0, 2 #guarda o 2
+	div $8, $9 #divide por 2
+	mflo $10 #move a parte inteira
+	mfhi $11 #move o resto
+	
+	addi $12, $0, 1 #guarda o 1
+	
+	beq $11, $12, impar #se o resto for igual a 0, pula para o rótulo impar
+	
+par:
+	addi $4, $0, 'p'
+	addi $2, $0, 11
+	syscall
+	beq $11, $0, fim #se for par, ir para o fim o programa (para não passar no rótulo impar)
+	
+impar: 
+	addi $4, $0, 'i' 
+	addi $2, $0, 11
+	syscall
+	
+fim:
+	addi $2, $0, 10
+	syscall
+
 
